@@ -4,32 +4,33 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Grass Roots',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Created by Idaho educators, for Idaho educators, and Idaho students.
+        We aren&apos;t trying to make an easy buck, but rather give students the
+        oppoortunity to participate.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'State Competition',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Compete against schools across Idaho, all from your school. 
+        Participate in our season and qualify for state. 
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Responsive Organization',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Being a small group we are able to focus on what students want
+        to play! If there&apos;s enough interest we can make it happen!
       </>
     ),
   },

@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Idaho Esports HelpDesk',
+  title: 'Idaho Esports',
   tagline: 'In the end, it\'s all about the game',
   favicon: 'img/favicon.ico',
 
@@ -70,15 +70,19 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/docs/category/rules', label: 'Rules', position: 'left'},
+          {to: '/docs/category/schedule', label: 'Schedule', position: 'left'},
+          /*
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'rules',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Rules',
           },
+          */
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/datrix83864',
             label: 'GitHub',
             position: 'right',
           },
@@ -91,25 +95,25 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Rules',
+                to: '/docs/category/rules',
               },
-            ],
+              {
+                label: 'Schedule',
+                to: '/docs/category/schedule',
+              },
+            ]
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/7SXG8gRWbw',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/idaho_esports',
               },
             ],
           },
@@ -122,7 +126,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/datrix83864',
               },
             ],
           },

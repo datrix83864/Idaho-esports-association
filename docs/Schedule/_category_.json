@@ -1,0 +1,9 @@
+{
+    "label": "Schedule",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "See the current posted schedule for our different games."
+    }
+  }
+  
