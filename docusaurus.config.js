@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'datrix83864', // Usually your GitHub org/user name.
-  projectName: 'esports-helpdesk', // Usually your repo name.
+  projectName: 'esports-idaho', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,14 +42,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/datrix83864/Esports-HelpDesk',
+            'https://github.com/datrix83864/Esports-Idaho/blob/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/datrix83864/Esports-HelpDesk',
+            'https://github.com/datrix83864/Esports-Idaho/blob/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
