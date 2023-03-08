@@ -80,12 +80,18 @@ const config = {
             label: 'Rules',
           },
           */
+          {type: 'dropdown',
+            label: 'Standings',
+            items: [
+              {to: '/standings/rocket_league', label: 'Rocket League Standings'},
+              {to: '/standings/valorant', label: 'Valorant Standings'},
+              {to: '/standings/overwatch_2', label: 'Overwatch 2 Standings'},
+              {to: '/standings/smash_bros', label: 'Smash Bros Standings'},
+              {to: '/standings/league_of_legends', label: 'League of Legends Standings'},
+            ]
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/standings/rocket_league', label: 'Rocket League Standings', position: 'left'},
-          {to: '/standings/valorant', label: 'Valorant Standings', position: 'left'},
-          {to: '/standings/overwatch_2', label: 'Overwatch 2 Standings', position: 'left'},
-          {to: '/standings/smash_bros', label: 'Smash Bros Standings', position: 'left'},
-          {to: '/standings/league_of_legends', label: 'League of Legends Standings', position: 'left'},
+          
           {
             href: 'https://github.com/datrix83864',
             label: 'GitHub',
