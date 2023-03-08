@@ -128,11 +128,12 @@ const config = {
               {
                 label: 'Rules',
                 to: '/docs/category/rules',
-              },
+              },/*
               {
                 label: 'Schedule',
-                to: '/docs/category/schedule',
+                to: '/schedule',
               },
+              */
             ]
           },
           {
