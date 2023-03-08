@@ -110,7 +110,7 @@ const config = {
               {to: '/standings/league_of_legends', label: 'League of Legends Standings'},
             ]
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          //{to: '/blog', label: 'Blog', position: 'left'},
           
           {
             href: 'https://github.com/datrix83864',
