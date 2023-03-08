@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://main--incandescent-kelpie-331be9.netlify.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -70,8 +70,28 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/docs/category/rules', label: 'Rules', position: 'left'},
-          {to: '/docs/category/schedule', label: 'Schedule', position: 'left'},
+          {type: 'dropdown',
+            label: 'Rules',
+            items: [
+              {to: '/docs/Rules/general', label: 'General Rules'},
+              {to: '/docs/Rules/rocket_league', label: 'Rocket League Rules'},
+              {to: '/docs/Rules/valorant', label: 'Valorant Rules'},
+              {to: '/docs/Rules/overwatch_2', label: 'Overwatch 2 Rules'},
+              {to: '/docs/Rules/smash_bros', label: 'Smash Bros Rules'},
+              {to: '/docs/Rules/league_of_legends', label: 'League of Legends Rules'},
+            ]
+          },
+          {type: 'dropdown',
+            label: 'Schedule',
+            items: [
+              {to: '/schedule/general', label: 'Spring 2023 Season Schedule'},
+              {to: '/schedule/rocket_league', label: 'Rocket League Schedule'},
+              {to: '/schedule/valorant', label: 'Valorant Schedule'},
+              {to: '/schedule/overwatch_2', label: 'Overwatch 2 Schedule'},
+              {to: '/schedule/smash_bros', label: 'Smash Bros Schedule'},
+              {to: '/schedule/league_of_legends', label: 'League of Legends Schedule'},
+            ]
+          },
           /*
           {
             type: 'doc',
