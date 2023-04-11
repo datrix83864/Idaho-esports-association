@@ -110,6 +110,11 @@ const config = {
               {to: '/standings/league_of_legends', label: 'League of Legends Standings'},
             ]
           },
+          {type: 'doc',
+            label: 'State Tournament',
+            position: 'left',
+            docId: 'state'
+          },
           //{to: '/blog', label: 'Blog', position: 'left'},
           
           {
