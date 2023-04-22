@@ -115,6 +115,11 @@ const config = {
             position: 'left',
             docId: 'state'
           },
+          {type: 'doc',
+            label: 'State Play-in',
+            position: 'left',
+            docId: 'state_playin'
+          },
           //{to: '/blog', label: 'Blog', position: 'left'},
           
           {
