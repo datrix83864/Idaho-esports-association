@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://main--incandescent-kelpie-331be9.netlify.app/',
+  url: 'https://www.idahoesports.gg/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -42,14 +42,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/datrix83864/Esports-Idaho/blob/main',
+            'https://github.com/datrix83864/Esports-Helpdesk/blob/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/datrix83864/Esports-Idaho/blob/main',
+            'https://github.com/datrix83864/Esports-Helpdesk/blob/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -78,18 +78,18 @@ const config = {
               {to: '/docs/Rules/valorant', label: 'Valorant Rules'},
               {to: '/docs/Rules/overwatch_2', label: 'Overwatch 2 Rules'},
               {to: '/docs/Rules/smash_bros', label: 'Smash Bros Rules'},
-              {to: '/docs/Rules/league_of_legends', label: 'League of Legends Rules'},
+              {to: '/docs/Rules/apex', label: 'Apex Rules'},
             ]
           },
           {type: 'dropdown',
             label: 'Schedule',
             items: [
-              {to: '/schedule/general', label: 'Spring 2023 Season Schedule'},
+              {to: '/schedule/general', label: 'Spring 2024 Season Schedule'},
               {to: '/schedule/rocket_league', label: 'Rocket League Schedule'},
               {to: '/schedule/valorant', label: 'Valorant Schedule'},
               {to: '/schedule/overwatch_2', label: 'Overwatch 2 Schedule'},
               {to: '/schedule/smash_bros', label: 'Smash Bros Schedule'},
-              {to: '/schedule/league_of_legends', label: 'League of Legends Schedule'},
+              {to: '/schedule/apex', label: 'Apex Schedule'},
             ]
           },
           /*
@@ -119,6 +119,22 @@ const config = {
             label: 'State Play-in',
             position: 'left',
             docId: 'state_playin'
+          },
+          {type: 'dropdown',
+            label: 'Non-Profit',
+            items: [
+              {to: '/docs/category/minutes', label: 'Minutes'},
+              {to: '/docs/Non-Profit/articles_of_incorporation', label: 'Articles of Incorporation'},
+              {to: '/docs/Non-Profit/non_profit_bylaws', label: 'Bylways'},
+            ]
+          },
+          {type: 'dropdown',
+            label: 'Join Us',
+            items: [
+              {to: '/join-our-teams/contact_us', label: 'Contact Us'},
+              {to: '/join-our-teams/our_teams', label: 'Our Teams'},
+              {to: '/join-our-teams/getting_started', label: 'Getting Started'},
+            ]
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           
