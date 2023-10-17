@@ -59,7 +59,11 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} />
           ))}
         </div>
+          <div className="row">
+          <a href="https://www.guidestar.org/profile/shared/af51e000-07a0-4809-a0a4-ad5864c3f1e0" target="_blank"><img src="https://widgets.guidestar.org/TransparencySeal/10172083" /></a>
+          </div>
       </div>
     </section>
+
   );
 }
