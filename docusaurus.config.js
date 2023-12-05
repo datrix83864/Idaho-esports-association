@@ -79,6 +79,7 @@ const config = {
               {to: '/docs/Rules/overwatch_2', label: 'Overwatch 2 Rules'},
               {to: '/docs/Rules/smash_bros', label: 'Smash Bros Rules'},
               {to: '/docs/Rules/apex', label: 'Apex Rules'},
+              {to: '/docs/Rules/league_of_legends', label: 'League of Legends'},
             ]
           },
           {type: 'dropdown',
@@ -90,6 +91,7 @@ const config = {
               {to: '/schedule/overwatch_2', label: 'Overwatch 2 Schedule'},
               {to: '/schedule/smash_bros', label: 'Smash Bros Schedule'},
               {to: '/schedule/apex', label: 'Apex Schedule'},
+              {to: '/schedule/league_of_legends', label: 'League of Legends'},
             ]
           },
           /*
@@ -107,6 +109,7 @@ const config = {
               {to: '/standings/valorant', label: 'Valorant Standings'},
               {to: '/standings/overwatch_2', label: 'Overwatch 2 Standings'},
               {to: '/standings/smash_bros', label: 'Smash Bros Standings'},
+              {to: '/standings/apex', label: 'Apex Standings'},
               {to: '/standings/league_of_legends', label: 'League of Legends Standings'},
             ]
           },
@@ -125,7 +128,7 @@ const config = {
             items: [
               {to: '/docs/category/minutes', label: 'Minutes'},
               {to: '/docs/Non-Profit/articles_of_incorporation', label: 'Articles of Incorporation'},
-              {to: '/docs/Non-Profit/non_profit_bylaws', label: 'Bylways'},
+              {to: '/docs/Non-Profit/non_profit_bylaws', label: 'Bylaws'},
             ]
           },
           {type: 'dropdown',
@@ -178,10 +181,10 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/datrix83864',
