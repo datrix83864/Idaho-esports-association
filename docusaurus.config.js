@@ -127,6 +127,7 @@ const config = {
             label: 'Non-Profit',
             items: [
               {to: '/docs/category/minutes', label: 'Minutes'},
+              {to: 'docs/Non-Profit/meetings', label: 'Meetings'},
               {to: '/docs/Non-Profit/articles_of_incorporation', label: 'Articles of Incorporation'},
               {to: '/docs/Non-Profit/non_profit_bylaws', label: 'Bylaws'},
             ]
