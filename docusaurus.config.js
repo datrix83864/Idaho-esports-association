@@ -78,6 +78,7 @@ const config = {
               {to: '/docs/Rules/valorant', label: 'Valorant Rules'},
               {to: '/docs/Rules/overwatch_2', label: 'Overwatch 2 Rules'},
               {to: '/docs/Rules/smash_bros', label: 'Smash Bros Rules'},
+              {to: '/docs/Rules/mario_kart_8', label: 'Mario Kart 8 Rules'},
               {to: '/docs/Rules/apex', label: 'Apex Rules'},
               {to: '/docs/Rules/league_of_legends', label: 'League of Legends'},
             ]
@@ -90,6 +91,7 @@ const config = {
               {to: '/schedule/valorant', label: 'Valorant Schedule'},
               {to: '/schedule/overwatch_2', label: 'Overwatch 2 Schedule'},
               {to: '/schedule/smash_bros', label: 'Smash Bros Schedule'},
+              {to: '/schedule/mario_kart_8', label: 'Mario Kart 8 Schedule'},
               {to: '/schedule/apex', label: 'Apex Schedule'},
               {to: '/schedule/league_of_legends', label: 'League of Legends'},
             ]
@@ -109,6 +111,7 @@ const config = {
               {to: '/standings/valorant', label: 'Valorant Standings'},
               {to: '/standings/overwatch_2', label: 'Overwatch 2 Standings'},
               {to: '/standings/smash_bros', label: 'Smash Bros Standings'},
+              {to: '/standings/mario_kart_8', label: 'Mario Kart 8 Standings'},
               {to: '/standings/apex', label: 'Apex Standings'},
               {to: '/standings/league_of_legends', label: 'League of Legends Standings'},
             ]
