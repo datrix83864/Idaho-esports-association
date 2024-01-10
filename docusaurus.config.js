@@ -62,12 +62,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/Logo_Text.jpg',
       navbar: {
         title: 'Idaho Esports',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Idaho Esports Logo',
+          src: 'img/Logo_Text.svg',
         },
         items: [
           {type: 'dropdown',
