@@ -5,6 +5,8 @@ authors: [datrix]
 tags: [rules, League of Legends]
 ---
 import CommitDate from '../../src/api/GitHubPages/CommitDate'
+import GameStopStatement from '../../src/components/GameStopStatement/GameStopStatement'
+import ConflictStatement from '../../src/components/ConflictStatement/ConflictStatement'
 
 Updated: <CommitDate game="league_of_legends" />
 
@@ -148,20 +150,7 @@ Any paper notes or penciled ideas are welcome during draft for all levels.
 
 ### 5.1. Game Pauses
 
-Pause requests must be communicated in the match’s all chat and only may be called as long as there are no team engagements at the time of the request. A pause may be called only for the following reasons:
-
-- Player Disconnection
-- Game Breaking Errors/Issues
-- IEA Administrators may call for a match pause at their discretion
-
-Stoppage of Play:
-
-- Shortly after a pause is initiated, a reason must be given via chat in game or in Discord.
-- Each team will have 5 cumulative minutes to pause. When 5 minutes have been exhausted, teams are required to continue play. Both teams should consider keeping track of time.
-- Each team is responsible for timing their pause (any issues should be discussed with the opposing team)
-- In the case of a player disconnect, after the 5 minutes are used, the team must continue the game (4 v 5)
-- If the player is able to reconnect, the player can rejoin the match.
-- No subs are allowed to be subbed in the middle of a match
+<GameStopStatement numPlayers={5} />
 
 ### 5.2. Match Resets
 
@@ -170,3 +159,7 @@ Match Resets will be made at the discretion of IEA officials.
 ## 6. Team Rosters
 
 League of Legends team rosters require a minimum of 5 players and are limited to a maximum of 10 players (5 starting players, and 5 substitute players). Rosters that do not meet the minimum or exceed the maximum number of players will not be allowed to participate in official matches until their roster size meets the set requirements. Player substitutions may be made between maps.
+
+## 7. Conflict Resolution
+
+<ConflictStatement />

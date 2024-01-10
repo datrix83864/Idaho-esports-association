@@ -6,6 +6,8 @@ tags: [rules, Overwatch 2]
 ---
 
 import CommitDate from '../../src/api/GitHubPages/CommitDate'
+import GameStopStatement from '../../src/components/GameStopStatement/GameStopStatement'
+import ConflictStatement from '../../src/components/ConflictStatement/ConflictStatement'
 
 Updated: <CommitDate game="overwatch_2" />
 
@@ -146,11 +148,7 @@ New maps or heroes will be banned for 2 weeks. This may also apply to big hero r
 
 The game should automatically pause on a player disconnect.
 
-* Shortly after a pause is initiated, a reason must be given via game chat (e.g.: player disconnect, ping issues, technical difficulties, etc.).
-* Each team will have 5 cumulative minutes to pause. When 5 minutes have been exhausted, teams are required to continue play. Both teams should consider keeping track of time.
-* Each team is responsible for timing their pause (any issues should be discussed with the other team and IEA Administrators)
-* In the case of a player disconnect, after the 5 minutes are used, the team must continue the game (4 v 5)
-* If the player is able to reconnect, the player can rejoin the match. It must be the same player with the same battle.net account in the same role.
+<GameStopStatement numPlayers={5} />
 
 ## 9. Spectators
 
@@ -169,3 +167,7 @@ Coaches are not allowed to talk during active play. Active play includes the pre
 Coaching is only allowed between rounds.
 
 Coaches are permitted to be un-deafened in voice chat, but mic must be software muted.
+
+## 11. Conflict Resolution
+
+<ConflictStatement />
