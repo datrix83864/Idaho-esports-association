@@ -5,6 +5,8 @@ authors: [datrix]
 tags: [rules, Smash Bros]
 ---
 import CommitDate from '../../src/api/GitHubPages/CommitDate'
+import GameStopStatement from '../../src/components/GameStopStatement/GameStopStatement'
+import ConflictStatement from '../../src/components/ConflictStatement/ConflictStatement'
 
 Updated: <CommitDate game="smash_bros" />
 
@@ -148,9 +150,7 @@ Teams may substitute players between sets. The substitute player's Nintendo ID m
 
 ### 4.1. Stoppage of Play
 
-- Shortly after a pause is initiated, a reason must be given to the opposing team and, if applicable, IEA representative acting as referee for the match (i.g: player disconnect, ping issues, technical difficulties, ect.)
-- Each team is responsible for timing their pause (any issues should be discussed with IEA or the other team)
-- No subs are allowed to be subbed in the middle of a set
+<GameStopStatement numPlayers={4} />
 
 ### 4.2. Coaching
 
@@ -161,7 +161,4 @@ Teams may substitute players between sets. The substitute player's Nintendo ID m
 
 ### 4.3. Conflict resolution
 
-- IEA encourages you to attempt to resolve all conflicts with the opposing team
-- If your attempts at resolving the conflict have been unsuccessful, please reach out to IEA via the leagueOS match chat to explain your situation and we will settle the matter for you.
-- Have screen shots or replays when possible.
-- All IEA rulings on disputes are final
+<ConflictStatement />
