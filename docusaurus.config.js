@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "datrix83864", // Usually your GitHub org/user name.
-  projectName: "esports-idaho", // Usually your repo name.
+  projectName: "Idaho-esports-association", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -41,13 +41,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/datrix83864/Esports-Helpdesk/blob/main",
+          editUrl: "https://github.com/datrix83864/Idaho-esports-association/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/datrix83864/Esports-Helpdesk/blob/main",
+          editUrl: "https://github.com/datrix83864/Idaho-esports-association/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -172,7 +172,7 @@ const config = {
           //{to: '/blog', label: 'Blog', position: 'left'},
 
           {
-            href: "https://github.com/datrix83864",
+            href: "https://github.com/datrix83864/Idaho-esports-association/",
             label: "GitHub",
             position: "right",
           },
@@ -217,7 +217,7 @@ const config = {
               // },
               {
                 label: "GitHub",
-                href: "https://github.com/datrix83864",
+                href: "https://github.com/datrix83864/Idaho-esports-association/",
               },
             ],
           },
