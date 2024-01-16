@@ -5,9 +5,6 @@ authors: [datrix]
 tags: [rules, Valorant]
 ---
 import CommitDate from '../../src/api/GitHubPages/CommitDate'
-import GameStopStatement from '../../src/components/GameStopStatement/GameStopStatement'
-import CoachingStatement from '../../src/components/CoachingStatement/CoachingStatement'
-import ConflictStatement from '../../src/components/ConflictStatement/ConflictStatement'
 
 Updated: <CommitDate game="valorant" />
 
@@ -63,7 +60,9 @@ The Home Team (the team listed on left in the bracket) will create the match wit
 
 ## 4. Coaching
 
-<CoachingStatement game="valorant" />
+* Coaches: Coaches are allowed as long as they are registered as a coach on the team. Coaches are not permitted to play.
+* Coaches are not allowed to talk to players during the match. Coaches can only communicate with the players before the map starts, during tactical timeouts, and between maps.
+* Coaches are permitted to be un-deafened in voice chat, but mic must be software muted.
 
 ## 5. Updates
 
@@ -75,8 +74,9 @@ Any new map and agents will be automatically banned for 2 weeks after its offici
 
 ## 6. Stoppage of Play
 
-<GameStopStatement numPlayers={5}/>
-
-## 7. Conflict Resolution
-
-<ConflictStatement />
+* Shortly after a pause is initiated, a reason must be given to the IEA representative acting as referee for the match (i.g: player disconnect, ping issues, technical difficulties, ect.)
+* Each team will have 5 cumulative minutes to pause. When 5 minutes have been exhausted, teams are required to continue play. Both teams should consider keeping track of time.
+* Each team is responsible for timing their pause (any issues should be discussed with the opposing team, coaches, and then IEA officials)
+* In the case of a player disconnect, after the 5 minutes are used, the team must continue the game (4 v 5)
+* If the player is able to reconnect, the player can rejoin the match.
+* No subs are allowed to be subbed in the middle of a match.
