@@ -173,7 +173,7 @@ const config = {
           href: "https://idahoesports.leagueos.gg",
           label: "LeagueOS",
           position: "left",
-          }
+          },
           //{to: '/blog', label: 'Blog', position: 'left'},
 
           {
