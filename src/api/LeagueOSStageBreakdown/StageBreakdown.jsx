@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const StageBreakdown = (props) => {
   const { siteConfig: { customFields } } = useDocusaurusContext();
