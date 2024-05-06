@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-
-const StageBreakdown = () => {
-  const { siteConfig: {customFields}, } = useDocusaurusContext();
+const StageBreakdown = (props) => {
+  const { siteConfig: { customFields } } = useDocusaurusContext();
   const [matchData, setMatchData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://api.leagueos.gg/seasons/${props.seasonId}/stages/${props.stageId}/matches`, {
@@ -21,8 +19,7 @@ const StageBreakdown = () => {
 
         // Check if the response has a 'results' property and 'teams' array
         if (response.data) {
-          const sortedResults = response.data.data.results.sort((a, b) => a.matchId - b.matchId);
-          setMatchData(sortedResults);
+          setMatchData(response.data.data.results);
         } else {
           console.error('Invalid data format in the API response');
         }
@@ -39,6 +36,9 @@ const StageBreakdown = () => {
   if (loading) {
     return <div>Loading...</div>; // Display loading indicator
   }
+
+  // Sort the match data by match ID
+  const sortedResults = matchData.sort((a, b) => a.matchId - b.matchId);
 
   return (
     <div>
