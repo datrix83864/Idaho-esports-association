@@ -55,7 +55,7 @@ const StageBreakdown = (props) => {
                 <strong>Match ID:</strong> {result.matchId}
               </div>
               <div>
-                <strong>Date:</strong> {result.date}
+                <strong>Date:</strong> {date}
               </div>
               <div>
                 <strong>Name:</strong> {result.name}
