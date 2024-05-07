@@ -17,7 +17,7 @@ const TeamName = ({ teamId }) => {
         });
 
         if (response.data && response.data.data) {
-          setTeamName(response.data.data.name);
+          setTeamName(response.data.data.parent.name);
         } else {
           console.error('Invalid data format in the API response');
         }
