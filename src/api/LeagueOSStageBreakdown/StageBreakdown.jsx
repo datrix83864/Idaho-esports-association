@@ -47,7 +47,7 @@ const StageBreakdown = (props) => {
           return (
             <li key={result.id}>
               <div>
-                <strong>Match Name:</strong> {result.name}
+              <a href={`https://idahoesports.leagueos.gg/seasons/${props.seasonId}/stages/${props.stageId}/matches/${result.id}`}><strong>Match Name:</strong> {result.name}</a>
               </div>
               <div>
                 <strong>Date:</strong> {date}
