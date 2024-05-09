@@ -58,6 +58,9 @@ const StageBreakdown = (props) => {
               <div>
                 <strong>Team 2:</strong> <TeamName teamId={result.teamIds[1]} />
               </div>
+              <div>
+                <strong>Twitch Stream:</strong> <a href={result.externalLinks.url}>{result.externalLinks.url}</a>
+              </div>
             </li>
           );
         })}
