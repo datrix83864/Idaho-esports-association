@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Markdown from 'marked-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import ReactDOMServer from 'react-dom/server';
 
 const Rulebook = (props) => {
   const { siteConfig: { customFields } } = useDocusaurusContext();
@@ -19,7 +20,6 @@ const Rulebook = (props) => {
 
         if (response.data && response.data.data.md) {
           const markdownContent = response.data.data.md;
-          // Parse markdown content and generate numbered headings
           const parsedContent = parseMarkdown(markdownContent);
           setBookData(parsedContent);
         } else {
@@ -35,7 +35,6 @@ const Rulebook = (props) => {
     fetchData();
   }, [props.bookid, customFields.apiKey]);
 
-  // Function to parse markdown content and generate numbered headings
   const parseMarkdown = (content) => {
     let lines = content.split('\n');
     let result = [];
@@ -44,22 +43,22 @@ const Rulebook = (props) => {
     lines.forEach(line => {
       if (line.startsWith('## ')) {
         currentNumbering = [parseInt(line.match(/\d+/)[0])];
-        result.push(<h2>{currentNumbering.join('.')} {line.substring(3)}</h2>);
+        result.push(`<h2>${currentNumbering.join('.')} ${line.substring(3)}</h2>`);
       } else if (line.startsWith('### ')) {
         currentNumbering.push(1);
-        result.push(<h3>{currentNumbering.join('.')} {line.substring(4)}</h3>);
+        result.push(`<h3>${currentNumbering.join('.')} ${line.substring(4)}</h3>`);
       } else if (line.startsWith('#### ')) {
         currentNumbering.push(1);
-        result.push(<h4>{currentNumbering.join('.')} {line.substring(5)}</h4>);
+        result.push(`<h4>${currentNumbering.join('.')} ${line.substring(5)}</h4>`);
       } else if (line.startsWith('##### ')) {
         currentNumbering.push(1);
-        result.push(<h5>{currentNumbering.join('.')} {line.substring(6)}</h5>);
+        result.push(`<h5>${currentNumbering.join('.')} ${line.substring(6)}</h5>`);
       } else {
-        result.push(<p>{line}</p>);
+        result.push(`<p>${line}</p>`);
       }
     });
 
-    return result;
+    return result.join(''); // Join all elements into a single string
   }
 
   if (loading) {
@@ -68,7 +67,7 @@ const Rulebook = (props) => {
 
   return (
     <div>
-      <Markdown>{bookData}</Markdown>
+      <Markdown>{ReactDOMServer.renderToString(bookData)}</Markdown>
     </div>
   );
 };
