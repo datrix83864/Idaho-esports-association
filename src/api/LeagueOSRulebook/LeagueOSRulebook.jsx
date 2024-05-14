@@ -39,7 +39,7 @@ const Rulebook = (props) => {
     return mdContent.replace(/^(#+)\s+(.*)$/gm, (match, hashes, title) => {
       lineNumber++;
       const level = hashes.length;
-      return `<h${level}>${lineNumber}. ${title}</h${level}>`;
+      return `${'#'.repeat(level)} ${lineNumber}. ${title}`;
     });
   };
 
@@ -49,8 +49,8 @@ const Rulebook = (props) => {
 
   return (
     <div>
-      {/* Render bookData as HTML with numbered headings */}
-      <div dangerouslySetInnerHTML={{ __html: convertToNumberedHeadings(bookData) }}></div>
+      {/* Render bookData as Markdown, converted to HTML with numbered headings */}
+      <Markdown>{convertToNumberedHeadings(bookData)}</Markdown>
     </div>
   );
 };
