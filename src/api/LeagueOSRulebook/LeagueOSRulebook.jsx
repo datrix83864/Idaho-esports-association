@@ -59,8 +59,13 @@ const Rulebook = (props) => {
       }
     });
 
-    return result.join(''); // Join all elements into a single string
-  }
+      const numbers = new Array(currentLevel).fill(0).map((_, i) => i + 1);
+      const numberedLine = `<h${currentLevel}>${numbers.join('.')} ${line.substr(currentLevel + 1)}</h${currentLevel}>`;
+      numberedLines.push(numberedLine);
+    }
+
+    return numberedLines.join('\n');
+  };
 
   const convertToNumberedHeadings = (mdContent) => {
     const lines = mdContent.split('\n');
@@ -97,7 +102,8 @@ const Rulebook = (props) => {
 
   return (
     <div>
-      <Markdown>{ReactDOMServer.renderToString(bookData)}</Markdown>
+      {/* Render bookData as HTML */}
+      <div dangerouslySetInnerHTML={{ __html: bookData }}></div>
     </div>
   );
 };
