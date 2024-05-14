@@ -20,8 +20,9 @@ const Rulebook = (props) => {
 
         if (response.data && response.data.data.md) {
           // Convert Markdown to HTML using marked
-          const htmlContent = response.data.data.md;
-          setBookData(htmlContent);
+          const mdContent = response.data.data.md;
+          const numberedHTML = convertToNumberedHeadings(mdContent);
+          setBookData(numberedHTML);
         } else {
           console.error('Invalid data format in the API response');
         }
@@ -34,6 +35,35 @@ const Rulebook = (props) => {
 
     fetchData();
   }, [props.bookid]); // Include props.bookid in the dependency array
+
+  const convertToNumberedHeadings = (mdContent) => {
+    const lines = mdContent.split('\n');
+    let currentLevel = 0;
+    let numberedLines = [];
+
+    for (let line of lines) {
+      if (line.startsWith('## ')) {
+        currentLevel = 1;
+      } else if (line.startsWith('### ')) {
+        currentLevel = 2;
+      } else if (line.startsWith('#### ')) {
+        currentLevel = 3;
+      } else if (line.startsWith('##### ')) {
+        currentLevel = 4;
+      } else if (line.startsWith('###### ')) {
+        currentLevel = 5;
+      } else {
+        numberedLines.push(line);
+        continue;
+      }
+
+      const numbers = new Array(currentLevel).fill(0).map((_, i) => i + 1);
+      const numberedLine = numbers.join('.') + ' ' + line.substr(currentLevel + 1);
+      numberedLines.push(numberedLine);
+    }
+
+    return numberedLines.join('\n');
+  };
 
   if (loading) {
     return <div>Loading...</div>;
