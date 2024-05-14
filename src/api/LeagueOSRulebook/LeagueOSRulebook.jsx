@@ -35,13 +35,31 @@ const Rulebook = (props) => {
   }, [props.bookid]); // Include props.bookid in the dependency array
 
   const convertToNumberedHeadings = (mdContent) => {
-    let lineNumber = 0;
+    let mainHeadingNumber = 0;
+    let subHeadingNumber = 0;
+    let subSubHeadingNumber = 0;
+  
     return mdContent.replace(/^(#+)\s+(.*)$/gm, (match, hashes, title) => {
-      lineNumber++;
       const level = hashes.length;
-      return `${'#'.repeat(level)} ${lineNumber}. ${title}`;
+  
+      if (level === 2) {
+        mainHeadingNumber++;
+        subHeadingNumber = 0;
+        subSubHeadingNumber = 0;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}. ${title}`;
+      } else if (level === 3) {
+        subHeadingNumber++;
+        subSubHeadingNumber = 0;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}.${subHeadingNumber}. ${title}`;
+      } else if (level === 4) {
+        subSubHeadingNumber++;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}.${subHeadingNumber}.${subSubHeadingNumber}. ${title}`;
+      }
+  
+      return match;
     });
   };
+  
 
   if (loading) {
     return <div>Loading...</div>;
