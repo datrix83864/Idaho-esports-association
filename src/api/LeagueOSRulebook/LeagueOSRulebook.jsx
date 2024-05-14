@@ -50,7 +50,7 @@ const Rulebook = (props) => {
   return (
     <div>
       {/* Render bookData as HTML with numbered headings */}
-      <Markdown>{convertToNumberedHeadings(bookData)}</Markdown>
+      <div dangerouslySetInnerHTML={{ __html: convertToNumberedHeadings(bookData) }}></div>
     </div>
   );
 };
