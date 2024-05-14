@@ -35,9 +35,11 @@ const Rulebook = (props) => {
   }, [props.bookid]); // Include props.bookid in the dependency array
 
   const convertToNumberedHeadings = (mdContent) => {
+    let lineNumber = 0;
     return mdContent.replace(/^(#+)\s+(.*)$/gm, (match, hashes, title) => {
+      lineNumber++;
       const level = hashes.length;
-      return `${'#'.repeat(level)} ${title}\n${'#'.repeat(level)}${level > 1 ? '.' : ''}`;
+      return `<h${level}>${lineNumber}. ${title}</h${level}>`;
     });
   };
 
@@ -47,7 +49,7 @@ const Rulebook = (props) => {
 
   return (
     <div>
-      {/* Render bookData as Markdown, converted to HTML */}
+      {/* Render bookData as HTML with numbered headings */}
       <Markdown>{convertToNumberedHeadings(bookData)}</Markdown>
     </div>
   );
