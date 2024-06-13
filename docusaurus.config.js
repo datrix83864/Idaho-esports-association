@@ -154,6 +154,7 @@ const config = {
             label: "Non-Profit",
             items: [
               { to: "/docs/category/minutes", label: "Minutes" },
+              { to: "/docs/category/policies", label: "Policies" },
               { to: "docs/Non-Profit/meetings", label: "Meetings" },
               {
                 to: "/docs/Non-Profit/articles_of_incorporation",
