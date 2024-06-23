@@ -220,6 +220,14 @@ const config = {
             ],
           },
           {
+            title: "Sponsors",
+            items: [
+              {
+                label: "TeamSpeak", href: "https://teamspeak.com/en/",
+              },
+            ]
+          },
+          {
             title: "More",
             items: [
               // {
