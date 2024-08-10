@@ -11,7 +11,7 @@ const Rulebook = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.leagueos.gg/rulebooks/${props.bookid}`, {
+        const response = await axios.get(`https://api.leagueos.gg/league/rulebooks/${props.bookid}`, {
           headers: {
             'x-leagueos-api-key': customFields.apiKey,
           },
