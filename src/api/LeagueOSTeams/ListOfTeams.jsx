@@ -12,7 +12,7 @@ const ListOfTeams = () => {
     
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api.leagueos.gg/groups', {
+        const response = await axios.get('https://api.leagueos.gg/leauge/groups', {
           headers: {
             'x-leagueos-api-key': customFields.apiKey,
           },
