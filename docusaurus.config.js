@@ -88,6 +88,34 @@ const config = {
                 to: "/docs/Rules/league_of_legends",
                 label: "League of Legends",
               },
+              {
+                to: "/docs/Rules/college_football_25",
+                label: "College Football 25",
+              },
+              {
+                to: "/docs/Rules/ea_fc_25",
+                label: "EA FC 25",
+              },
+              {
+                to: "/docs/Rules/minecraft_bedwars_2v2",
+                label: "Minecraft Bedwars - 2v2",
+              },
+              {
+                to: "/docs/Rules/nba_2k25",
+                label: "NBA 2K25",
+              },
+              {
+                to: "/docs/Rules/pokemon_unite",
+                label: "Pokemon Unite",
+              },
+              {
+                to: "/docs/Rules/splatoon_3",
+                label: "Splatoon 3",
+              },
+              {
+                to: "/docs/Rules/street_fighter_6",
+                label: "Street Fighter 6",
+              },
             ],
           },
           {
