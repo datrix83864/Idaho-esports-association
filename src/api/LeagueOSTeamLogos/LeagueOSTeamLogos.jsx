@@ -12,7 +12,7 @@ const ListOfTeamLogos = () => {
     
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api.leagueos.gg/groups', {
+        const response = await axios.get('https://api.leagueos.gg/league/groups', {
           headers: {
             'x-leagueos-api-key': customFields.apiKey,
           },
@@ -46,7 +46,7 @@ const ListOfTeamLogos = () => {
         <div key={team.id}>
             {team.avatar && (
                 <li>
-          <a href={`https://images.leagueos.gg/leagues/rHiwcKi3OZwxivtVZj3j/groups/${team.id}/${team.avatar}`}>{team.name} - {`https://images.leagueos.gg/leagues/rHiwcKi3OZwxivtVZj3j/groups/${team.id}/${team.avatar}`}</a>
+          <a href={`https://images.leagueos.gg/groups/${team.id}/${team.avatar}`}>{team.name} - {`https://images.leagueos.gg/groups/${team.id}/${team.avatar}`}</a>
           
         </li>
             )}
