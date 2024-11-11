@@ -14,7 +14,7 @@ const StageBreakdown = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.leagueos.gg/seasons/${props.seasonId}/stages/${props.stageId}/matches`,
+          `https://api.leagueos.gg/league/seasons/${props.seasonId}/stages/${props.stageId}/matches`,
           {
             headers: {
               "x-leagueos-api-key": customFields.apiKey,

@@ -10,7 +10,7 @@ const TeamName = ({ teamId }) => {
   useEffect(() => {
     const fetchTeamData = async () => {
       try {
-        const response = await axios.get(`https://api.leagueos.gg/teams/${teamId}`, {
+        const response = await axios.get(`https://api.leagueos.gg/league/teams/${teamId}`, {
           headers: {
             'x-leagueos-api-key': customFields.apiKey,
           },

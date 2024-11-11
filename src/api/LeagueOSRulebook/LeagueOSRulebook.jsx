@@ -11,7 +11,7 @@ const Rulebook = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.leagueos.gg/rulebooks/${props.bookid}`, {
+        const response = await axios.get(`https://api.leagueos.gg/league/rulebooks/${props.bookid}`, {
           headers: {
             'x-leagueos-api-key': customFields.apiKey,
           },
@@ -19,9 +19,8 @@ const Rulebook = (props) => {
         console.log(response);
 
         if (response.data && response.data.data.md) {
-          // Convert Markdown to HTML using marked
-          const htmlContent = response.data.data.md;
-          setBookData(htmlContent);
+          // Set the Markdown content to state
+          setBookData(response.data.data.md);
         } else {
           console.error('Invalid data format in the API response');
         }
@@ -35,14 +34,41 @@ const Rulebook = (props) => {
     fetchData();
   }, [props.bookid]); // Include props.bookid in the dependency array
 
+  const convertToNumberedHeadings = (mdContent) => {
+    let mainHeadingNumber = 0;
+    let subHeadingNumber = 0;
+    let subSubHeadingNumber = 0;
+  
+    return mdContent.replace(/^(#+)\s+(.*)$/gm, (match, hashes, title) => {
+      const level = hashes.length;
+  
+      if (level === 2) {
+        mainHeadingNumber++;
+        subHeadingNumber = 0;
+        subSubHeadingNumber = 0;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}. ${title}`;
+      } else if (level === 3) {
+        subHeadingNumber++;
+        subSubHeadingNumber = 0;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}.${subHeadingNumber}. ${title}`;
+      } else if (level === 4) {
+        subSubHeadingNumber++;
+        return `${'#'.repeat(level)} ${mainHeadingNumber}.${subHeadingNumber}.${subSubHeadingNumber}. ${title}`;
+      }
+  
+      return match;
+    });
+  };
+  
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      {/* Render bookData as HTML */}
-      <Markdown>{bookData}</Markdown>
+      {/* Render bookData as Markdown, converted to HTML with numbered headings */}
+      <Markdown>{convertToNumberedHeadings(bookData)}</Markdown>
     </div>
   );
 };
