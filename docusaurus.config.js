@@ -166,6 +166,13 @@ const config = {
             ],
           },
           {
+            type: "dropdown",
+            label: "Past Seasons",
+            items: [
+              
+            ]
+          },
+          {
             type: "doc",
             label: "State Tournament",
             position: "left",
