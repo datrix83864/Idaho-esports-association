@@ -215,6 +215,11 @@ const config = {
           label: "LeagueOS",
           position: "left",
           },
+          {
+            href:"https://exclaim.gg/members/idahoesports",
+            label: "Our Merch",
+            position: "left",
+          },
           //{to: '/blog', label: 'Blog', position: 'left'},
 
           {
