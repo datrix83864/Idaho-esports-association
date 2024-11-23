@@ -65,6 +65,8 @@ export default function Home() {
             <rect x="0" y="734" fill="#fff" opacity="0" width="402" height="346"></rect>
           </a><a xlinkHref="https://www.idahoesports.gg/schedule/valorant">
             <rect x="1557" y="421" fill="#fff" opacity="0" width="363" height="304"></rect>
+          </a><a xlinkHref="https://www.idahoesports.gg/schedule/league_of_legends">
+            <rect x="1557" y="730" fill="#fff" opacity="0" width="363" height="348"></rect>
           </a>
         </svg>
         <HomepageFeatures />
