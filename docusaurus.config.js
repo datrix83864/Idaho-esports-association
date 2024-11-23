@@ -122,7 +122,7 @@ const config = {
             type: "dropdown",
             label: "Schedule",
             items: [
-              { to: "/schedule/general", label: "Spring 2024 Season Schedule" },
+              { to: "/schedule/general", label: "Spring 2025 Season Schedule" },
               {
                 to: "/schedule/rocket_league",
                 label: "Rocket League Schedule",
@@ -169,7 +169,7 @@ const config = {
             type: "dropdown",
             label: "Past Seasons",
             items: [
-              
+              { to: "/docs/Past Seasons/2024/2024-state", label: "2024 State"}
             ]
           },
           {
