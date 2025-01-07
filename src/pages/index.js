@@ -36,7 +36,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1545 2000">
-          <image width="1545" height="2000" xlink:href="/path/to/image"></image> <a xlink:href="https://youtube.com/live/7EmjJNinpG8?feature=share">
+          <image width="1545" height="2000" xlink:href={require("@site/static/img/2025_Kickoff_meeting_Flyer.png").default}></image> <a xlink:href="https://youtube.com/live/7EmjJNinpG8?feature=share">
             <rect x="373" y="1289" fill="#fff" opacity="0" width="315" height="385"></rect>
           </a><a xlink:href="https://www.twitch.tv/idaho_esports">
             <rect x="859" y="1290" fill="#fff" opacity="0" width="328" height="382"></rect>
