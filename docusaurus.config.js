@@ -260,11 +260,26 @@ const config = {
             ],
           },
           {
-            title: "Sponsors",
+            title: "Sponsors and Partners",
             items: [
               {
                 label: "TeamSpeak", href: "https://teamspeak.com/en/",
               },
+              {
+                label: "Exclaim", href: "https://exclaim.gg/",
+              },
+              {
+                label: "LeagueOS", href: "https://leagueos.gg/",
+              },
+              {
+                label: "ExtraLife", href: "https://www.extra-life.org/",
+              },
+              {
+                label: "Boise State University Esports", href: "https://www.boisestate.edu/esports/",
+              },
+              {
+                label: "University of Idaho Esports", href: "https://www.uidaho.edu/current-students/student-involvement/esports",
+              }
             ]
           },
           {
