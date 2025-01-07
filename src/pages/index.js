@@ -35,7 +35,7 @@ export default function Home() {
       description="The place for all things Idaho Esports!">
       <HomepageHeader />
       <main>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1545 2000">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1545 2000">
           <image width="1545" height="2000" xlinkHref={require("@site/static/img/2025_Kickoff_meeting_Flyer.png").default}></image> <a xlinkHref="https://youtube.com/live/7EmjJNinpG8?feature=share">
             <rect x="373" y="1289" fill="#fff" opacity="0" width="315" height="385"></rect>
           </a><a xlinkHref="https://www.twitch.tv/idaho_esports">
