@@ -211,6 +211,9 @@ const config = {
             ],
           },
           {
+            href: "https://givebutter.com/x2gm3d", label: "Support Us",
+          },
+          {
           href: "https://idahoesports.leagueos.gg",
           label: "LeagueOS",
           position: "left",
