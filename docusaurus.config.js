@@ -116,6 +116,10 @@ const config = {
                 to: "/docs/Rules/street_fighter_6",
                 label: "Street Fighter 6",
               },
+              {
+                to: "/docs/Rules/fortnite_trios",
+                label: "Fortnite",
+              },
             ],
           },
           {
