@@ -208,6 +208,7 @@ const config = {
             items: [
               { to: "/join-our-teams/contact_us", label: "Contact Us" },
               { to: "/join-our-teams/our_teams", label: "Our Teams" },
+              { to: "/join-our-teams/faqs", label: "FAQs" },
               {
                 to: "/join-our-teams/getting_started",
                 label: "Getting Started",
