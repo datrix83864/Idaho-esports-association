@@ -12,6 +12,8 @@ export default function Home() {
         <main>
         <h1>Contact Us</h1>
         <p>For general inquiries, please email <a href="mailto:info@idahoesports.gg">info@idahoesports.gg</a></p>
+        <p>Join our mailing list!</p>
+        <div class="ml-embedded" data-form="ryvj7J"></div>
         </main>
       </Layout>
     );
