@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-import 'dotenv/config';
+import "dotenv/config";
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -173,8 +173,8 @@ const config = {
             type: "dropdown",
             label: "Past Seasons",
             items: [
-              { to: "/docs/Past Seasons/2024/2024-state", label: "2024 State"}
-            ]
+              { to: "/docs/Past Seasons/2024/2024-state", label: "2024 State" },
+            ],
           },
           {
             type: "doc",
@@ -216,15 +216,16 @@ const config = {
             ],
           },
           {
-            href: "https://givebutter.com/x2gm3d", label: "Support Us",
+            href: "https://givebutter.com/x2gm3d",
+            label: "Support Us",
           },
           {
-          href: "https://idahoesports.leagueos.gg",
-          label: "LeagueOS",
-          position: "left",
+            href: "https://idahoesports.leagueos.gg",
+            label: "LeagueOS",
+            position: "left",
           },
           {
-            href:"https://exclaim.gg/members/idahoesports",
+            href: "https://exclaim.gg/members/idahoesports",
             label: "Our Merch",
             position: "left",
           },
@@ -271,24 +272,30 @@ const config = {
             title: "Sponsors and Partners",
             items: [
               {
-                label: "TeamSpeak", href: "https://teamspeak.com/en/",
+                label: "TeamSpeak",
+                href: "https://teamspeak.com/en/",
               },
               {
-                label: "Exclaim", href: "https://exclaim.gg/",
+                label: "Exclaim",
+                href: "https://exclaim.gg/",
               },
               {
-                label: "LeagueOS", href: "https://leagueos.gg/",
+                label: "LeagueOS",
+                href: "https://leagueos.gg/",
               },
               {
-                label: "ExtraLife", href: "https://www.extra-life.org/",
+                label: "ExtraLife",
+                href: "https://www.extra-life.org/",
               },
               {
-                label: "Boise State University Esports", href: "https://www.boisestate.edu/esports/",
+                label: "Boise State University Esports",
+                href: "https://www.boisestate.edu/esports/",
               },
               {
-                label: "University of Idaho Esports", href: "https://www.uidaho.edu/current-students/student-involvement/esports",
-              }
-            ]
+                label: "University of Idaho Esports",
+                href: "https://www.uidaho.edu/current-students/student-involvement/esports",
+              },
+            ],
           },
           {
             title: "More",
@@ -306,8 +313,28 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Idaho Esports Association Built with Docusaurus.`,
       },
+      headTags: [
+        {
+          tagName: "script",
+          innerHTML: `
+            (function(w,d,e,u,f,l,n){
+              w[f]=w[f]||function(){
+                (w[f].q=w[f].q||[]).push(arguments);
+              },
+              l=d.createElement(e),
+              l.async=1,
+              l.src=u,
+              n=d.getElementsByTagName(e)[0],
+              n.parentNode.insertBefore(l,n);
+            })
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '1282435');
+          `,
+          type: "text/javascript",
+        },
+      ],
       prism: {
-        additionalLanguages: ['bash', 'diff', 'json'],
+        additionalLanguages: ["bash", "diff", "json"],
       },
     }),
 };
