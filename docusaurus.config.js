@@ -315,7 +315,11 @@ const config = {
       },
       headTags: [
         {
-          tagName: "script",
+          tagName: 'script',
+          attributes: {
+            type: 'text/javascript',
+            async: true,
+          },
           innerHTML: `
             (function(w,d,e,u,f,l,n){
               w[f]=w[f]||function(){
@@ -330,7 +334,6 @@ const config = {
             (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
             ml('account', '1282435');
           `,
-          type: "text/javascript",
         },
       ],
       prism: {
