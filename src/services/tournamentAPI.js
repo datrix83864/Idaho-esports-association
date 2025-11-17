@@ -1,5 +1,5 @@
 const API_BASE = 'https://api.leagueos.gg';
-const API_KEY = import.meta.env.VITE_LEAGUEOS_API_KEY;
+const API_KEY = import.meta.env.LEAGUEOS_API_KEY;
 
 export const tournamentAPI = {
   // Fetch all registered teams/schools from LeagueOS
