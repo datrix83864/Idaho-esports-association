@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+  "node": ">=20.19.0"
+},
   "dependencies": {
     "@sanity/client": "^7.12.1",
     "@sanity/image-url": "^1.2.0",
@@ -18,7 +21,8 @@
     "lucide-react": "^0.553.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.6"
+    "react-router-dom": "^7.9.6",
+    "is-retry-allowed": "^1.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
