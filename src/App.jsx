@@ -1,0 +1,40 @@
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { Home } from "./pages/Home";
+import { ExpectingIndex } from "./pages/ExpectingSeries/Index";
+import { ExpectingArticle } from "./pages/ExpectingSeries/Article";
+import { About } from "./pages/About";
+import { Schools } from "./pages/Schools";
+import { Rules } from "./pages/Rules";
+import { Sponsors } from "./pages/Sponsors";
+import { Support } from "./pages/Support";
+import { Contact } from "./pages/Contact";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-slate-900 text-white flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/expecting" element={<ExpectingIndex />} />
+            <Route path="/expecting/:id" element={<ExpectingArticle />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/schools" element={<Schools />} />
+            <Route path="/rules" element={<Rules />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
