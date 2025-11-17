@@ -13,6 +13,7 @@
     "@sanity/client": "^7.12.1",
     "@sanity/image-url": "^1.2.0",
     "@tailwindcss/postcss": "^4.1.17",
+    "decompress-response": "^10.0.0",
     "git-filter-repo": "^0.0.30",
     "lucide-react": "^0.553.0",
     "react": "^19.2.0",
