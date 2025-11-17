@@ -6,7 +6,7 @@ export const tournamentAPI = {
   fetchSchools: async () => {
     try {
       console.log('Fetching teams from LeagueOS...');
-      
+
       const response = await fetch(`${API_BASE}/league/groups?ipp=400`, {
         headers: {
           'x-leagueos-api-key': API_KEY,
