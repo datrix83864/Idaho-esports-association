@@ -2,8 +2,8 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const sanityClient = createClient({
-    projectId: import.meta.env.SANITY_PROJECT_ID,
-    dataset: import.meta.env.SANITY_DATASET || 'production',
+    projectId: import.meta.env.PROJECT_ID,
+    dataset: import.meta.env.DATASET || 'production',
     useCdn: true,
     apiVersion: '2024-01-01',
     token: import.meta.env.SANITY_TOKEN, // Optional: add if you have a token
