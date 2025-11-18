@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     console.log('Fetching from LeagueOS API...');
 
     // Call LeagueOS API from server-side
-    const response = await fetch('https://api.leagueos.gg/league/groups', {
+    const response = await fetch('https://api.leagueos.gg/league/groups?ipp=400', {
       headers: {
         'x-leagueos-api-key': process.env.LEAGUEOS_API_KEY,
       },
