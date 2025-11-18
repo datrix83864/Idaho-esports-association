@@ -61,7 +61,7 @@ exports.handler = async (event) => {
 
     // Filter out type 5 teams and "Example" team
     const filteredTeams = data.data.results.filter(
-      team => team.type !== 5 && team.name !== "Example"
+      team => team.type !== 5 && team.name !== "Example" && team.teamCount > 0 && team.name !== "Yellow Lemming"
     );
 
     // Transform data for frontend
@@ -69,8 +69,8 @@ exports.handler = async (event) => {
       id: team.id,
       name: team.name,
       city: team.city || null,
-      logo: team.logo || null,
-      memberCount: team.memberCount || null,
+      logo: `https://images.leagueos.gg/groups/${team.id}/${team.avatar}` || null,
+      teamCount: team.teamCount || null,
       leagueosUrl: `https://idahoesports.leagueos.gg/league/groups/${team.id}`,
       type: team.type,
     }));
