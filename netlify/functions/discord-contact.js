@@ -42,6 +42,8 @@ exports.handler = async (event) => {
 
     // Send to Discord webhook
     const discordPayload = {
+      // For forum channels, we need to specify a thread name
+      thread_name: `Contact: ${subject}`,
       embeds: [{
         title: '📧 New Contact Form Submission',
         color: 0x8B5CF6, // Purple
