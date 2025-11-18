@@ -48,22 +48,46 @@ exports.handler = async (event) => {
 
     console.log('Calling MailerLite API...');
 
-    // MailerLite API v2 call
-    const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`,
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email,
-        fields: {
-          name: name || '',
+    // Determine which API version to use based on API key format
+    // New MailerLite tokens are longer (usually 64+ characters)
+    const isNewMailerLite = process.env.MAILERLITE_API_KEY.length > 40;
+    
+    let response;
+    
+    if (isNewMailerLite) {
+      // NEW MailerLite API (accounts created after March 22, 2022)
+      console.log('Using NEW MailerLite API');
+      response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`,
         },
-        groups: safeGroups.length > 0 && groupId ? [groupId] : [],
-      }),
-    });
+        body: JSON.stringify({
+          email: email,
+          fields: {
+            name: name || '',
+          },
+          groups: safeGroups.length > 0 && groupId ? [groupId] : [],
+        }),
+      });
+    } else {
+      // CLASSIC MailerLite API (accounts created before March 22, 2022)
+      console.log('Using CLASSIC MailerLite API v2');
+      response = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY,
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name || '',
+          groups: safeGroups.length > 0 && groupId ? [groupId] : [],
+        }),
+      });
+    }
 
     const data = await response.json();
     console.log('MailerLite response status:', response.status);
