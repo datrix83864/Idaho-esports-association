@@ -33,7 +33,7 @@ export const GameModal = ({ game, onClose }) => {
                     `${game.minPlayersPerTeam || '?'}–${game.maxPlayersPerTeam || '?'} per team` :
                     `${game.minPlayersIndividual || '1'} player (individual event)`
                   }
-                  {game.substitutesAllowed ? ` • Substitutes: ${game.substituteCount ?? 'TBD'}` : ''}
+                  {game.substitutesAllowed ? ` • Substitutes: Yes` : ''}
                 </p>
               </div>
 
