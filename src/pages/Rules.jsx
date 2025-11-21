@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { BookOpen, Clock, ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { queries } from '../services/sanity';
 
+const slugify = (text) => text?.toString().toLowerCase()
+  .trim()
+  .replace(/\s+/g, '-')
+  .replace(/[^\w\-]+/g, '') // remove non-word chars
+  .replace(/\-\-+/g, '-');
+
+
 // Simple Markdown renderer
 const MarkdownRenderer = ({ content }) => {
   const parseMarkdown = (text) => {
@@ -257,9 +264,7 @@ export const Rules = () => {
                   {/* Game Header */}
                   <div className="flex items-center space-x-3">
                     <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-                    <h2 className="text-2xl font-bold text-cyan-400 whitespace-nowrap px-4">
-                      {game}
-                    </h2>
+                    <h2 id={slugify(game)} className="text-2xl font-bold text-cyan-400 whitespace-nowrap px-4">{game}</h2>
                     <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
                   </div>
 

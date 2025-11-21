@@ -9,6 +9,7 @@ export const Header = () => {
   const navigation = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Games', path: '/games' },
     { name: 'Schools', path: '/schools' },
     { name: 'Rules', path: '/rules' },
     { name: 'Getting Started', path: '/expecting' },

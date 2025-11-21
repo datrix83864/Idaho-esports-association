@@ -12,6 +12,7 @@ import { Rules } from "./pages/Rules";
 import { Sponsors } from "./pages/Sponsors";
 import { Support } from "./pages/Support";
 import { Contact } from "./pages/Contact";
+import { Games } from "./pages/Games";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/expecting" element={<ExpectingIndex />} />
             <Route path="/expecting/:id" element={<ExpectingArticle />} />
             <Route path="/about" element={<About />} />
+            <Route path="/games" element={<Games />} />
             <Route path="/schools" element={<Schools />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/sponsors" element={<Sponsors />} />
