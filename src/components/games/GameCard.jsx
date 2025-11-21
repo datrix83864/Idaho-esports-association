@@ -8,13 +8,13 @@ export const GameCard = ({ game, onView }) => {
       <div className="flex items-start space-x-4">
         <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
           {logo ? (
-            <img src={logo} alt={game.title} className="w-full h-full object-cover rounded-lg" />
+            <img src={logo} alt={game.name} className="w-full h-full object-cover rounded-lg" />
           ) : (
             <Gamepad className="w-8 h-8 text-white" />
           )}
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-white mb-1">{game.title}</h3>
+          <h3 className="text-lg font-bold text-white mb-1">{game.name}</h3>
           {game.esrb && <p className="text-gray-400 text-sm">{game.esrb}</p>}
           {game.genre && <p className="text-purple-400 text-sm mt-2">{game.genre}</p>}
           <p className="text-gray-300 text-sm mt-2 line-clamp-3">{game.description}</p>

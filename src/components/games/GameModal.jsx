@@ -16,11 +16,11 @@ export const GameModal = ({ game, onClose }) => {
 
         <div className="flex items-start gap-6">
           <div className="w-24 h-24 rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-purple-500 to-cyan-500">
-            {logo ? <img src={logo} alt={game.title} className="w-full h-full object-cover" /> : <div className="text-white">{game.title}</div>}
+            {logo ? <img src={logo} alt={game.name} className="w-full h-full object-cover" /> : <div className="text-white">{game.name}</div>}
           </div>
 
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-white">{game.title}</h2>
+            <h2 className="text-2xl font-bold text-white">{game.name}</h2>
             <p className="text-gray-400 mt-1">{game.genre} • {game.esrb}</p>
 
             <p className="text-gray-300 mt-4">{game.description}</p>
