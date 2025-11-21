@@ -52,8 +52,8 @@ export const queries = {
     sanityClient.fetch(`*[_type == "siteSettings"][0] {
       tournamentPlatformUrl, merchStoreUrl, discordInvite, donationUrl, mailingListDescription
     }`),
-  getGames: async () => {
-    const q = `*[_type == "gameOffering"] | order(title asc){
+  getGames:  () =>
+    sanityClient.fetch(`*[_type == "gameOffering"] | order(title asc){
       _id,
       title,
       "slug": slug.current,
@@ -79,7 +79,6 @@ export const queries = {
       rulesAnchor,
       createdAt,
       _updatedAt
-    }`;
-    return await client.fetch(q);
-  }
+    }`),
+
 };
