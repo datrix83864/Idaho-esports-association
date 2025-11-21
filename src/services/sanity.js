@@ -52,33 +52,35 @@ export const queries = {
     sanityClient.fetch(`*[_type == "siteSettings"][0] {
       tournamentPlatformUrl, merchStoreUrl, discordInvite, donationUrl, mailingListDescription
     }`),
-  getGames:  () =>
-    sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
-      _id,
-      name,
-      "slug": slug.current,
-      "logo": logo.asset->url,
-      externalLogoUrl,
-      esrb,
-      genre,
-      description,
-      isTeamBased,
-      minPlayersPerTeam,
-      maxPlayersPerTeam,
-      recommendedPlayersPerTeam,
-      minPlayersIndividual,
-      substitutesAllowed,
-      substituteCount,
-      pricing,
-      seasonAvailability,
-      matchFormat,
-      typicalMatchLengthMinutes,
-      platforms,
-      equipmentRequirements,
-      "supportedBy": supportedBy-> { _id, name, "logo": logo.asset->url, website },
-      rulesAnchor,
-      createdAt,
-      _updatedAt
-    }`),
+  getGames: () =>
+  sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
+    _id,
+    name,
+    "slug": slug.current,
+    "logo": logo.asset->url,
+    externalLogoUrl,
+    "esrb": esrbRating,
+    genre,
+    description,
+    "isTeamBased": gameType.isTeamBased,
+    "minPlayersPerTeam": gameType.minPlayers,
+    "maxPlayersPerTeam": gameType.maxPlayers,
+    "recommendedPlayersPerTeam": gameType.recommendedPlayers,
+    "substitutesAllowed": gameType.substitutesAllowed,
+    pricing,
+    seasonAvailability,
+    "matchFormat": {
+      "regularSeason": regularSeasonFormat,
+      "postSeason": postSeasonFormat
+    },
+    "typicalMatchLengthMinutes": matchLength,
+    platforms,
+    equipmentRequirements,
+    "supportedBy": supportedBy-> { _id, name, "logo": logo.asset->url, website },
+    rulesAnchor,
+    _createdAt,
+    _updatedAt
+  }`)
+
 
 };
