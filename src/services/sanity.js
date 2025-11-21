@@ -53,9 +53,9 @@ export const queries = {
       tournamentPlatformUrl, merchStoreUrl, discordInvite, donationUrl, mailingListDescription
     }`),
   getGames:  () =>
-    sanityClient.fetch(`*[_type == "gameOffering"] | order(title asc){
+    sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
       _id,
-      title,
+      name,
       "slug": slug.current,
       "logo": logo.asset->url,
       externalLogoUrl,
