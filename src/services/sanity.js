@@ -105,7 +105,7 @@ export const queries = {
       }
     }`;
     
-    return await client.fetch(query);
+    return await sanityClient.fetch(query);
   },
 
   /**
@@ -123,7 +123,7 @@ export const queries = {
       schedule
     }`;
     
-    return await client.fetch(query, { day });
+    return await sanityClient.fetch(query, { day });
   },
 
   /**
@@ -142,7 +142,7 @@ export const queries = {
       schedule
     }`;
     
-    return await client.fetch(query, { slug });
+    return await sanityClient.fetch(query, { slug });
   },
 
 
