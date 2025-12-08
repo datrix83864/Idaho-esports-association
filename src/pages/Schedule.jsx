@@ -46,8 +46,9 @@ const GameScheduleCard = ({ game, schedule }) => {
   };
 
   return (
-    <div className="bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-lg p-4 hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/20">
-      <div className="flex items-start gap-4">
+    <div className="bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-lg overflow-hidden hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/20">
+      {/* Top Section - Logo and Game Info */}
+      <div className="p-4 flex items-start gap-4">
         {/* Game Logo */}
         {logoUrl && (
           <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-slate-900/50 border border-purple-500/20">
@@ -59,34 +60,36 @@ const GameScheduleCard = ({ game, schedule }) => {
           </div>
         )}
         
-        {/* Game Info */}
+        {/* Game Name and Division */}
         <div className="flex-1 min-w-0">
-          <h4 className="font-bold text-white text-lg mb-1">{game.name}</h4>
+          <h4 className="font-bold text-white text-lg mb-2">{game.name}</h4>
           
-          {/* Division Badge */}
-          <div className="mb-2">
-            <span className="inline-block px-2 py-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded text-xs font-semibold text-white">
+          {/* Division Badge and Genre */}
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="inline-block px-2 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded font-semibold text-white">
               {schedule.division}
             </span>
-          </div>
-
-          {/* Time Info */}
-          <div className="flex items-start gap-2 mb-2">
-            <Clock className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-            {getTimeDisplay()}
-          </div>
-
-          {/* Additional Info */}
-          <div className="flex flex-wrap gap-2 text-xs">
             {game.genre && (
               <span className="px-2 py-1 bg-purple-900/30 border border-purple-500/30 rounded text-purple-300">
                 {game.genre}
               </span>
             )}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Section - Time Info (Full Width) */}
+      <div className="px-4 py-3 bg-slate-900/50 border-t border-purple-500/20">
+        <div className="flex items-start gap-2">
+          <Clock className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+          <div className="flex-1">
+            {getTimeDisplay()}
+            
+            {/* Schedule Notes */}
             {schedule.notes && (
-              <span className="px-2 py-1 bg-slate-900/50 border border-slate-600 rounded text-gray-400">
-                {schedule.notes}
-              </span>
+              <div className="mt-2 pt-2 border-t border-slate-700">
+                <p className="text-xs text-gray-400">{schedule.notes}</p>
+              </div>
             )}
           </div>
         </div>
@@ -372,6 +375,7 @@ export const Schedule = () => {
                 </div>
               )}
             </>
+          )}
           )}
         </>
       )}
