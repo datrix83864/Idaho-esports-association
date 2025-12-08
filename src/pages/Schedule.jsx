@@ -22,7 +22,7 @@ const GameScheduleCard = ({ game, schedule }) => {
     if (schedule.timingMode === 'unified') {
       return (
         <div className="text-sm">
-          <div className="font-semibold text-cyan-400">All Timezones:</div>
+          <div className="font-semibold text-cyan-400">All Leagues:</div>
           <div className="text-gray-300">
             {schedule.mountainTime} MT / 
             {convertMountainToPacific(schedule.mountainTime)} PT
