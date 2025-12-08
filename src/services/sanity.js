@@ -1,5 +1,5 @@
 import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
 export const sanityClient = createClient({
   projectId: import.meta.env.VITE_PROJECT_ID,
@@ -10,7 +10,7 @@ export const sanityClient = createClient({
 });
 
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 export const urlFor = (source) => builder.image(source);
 
 // Query functions
@@ -53,7 +53,7 @@ export const queries = {
       tournamentPlatformUrl, merchStoreUrl, discordInvite, donationUrl, mailingListDescription
     }`),
   getGames: () =>
-  sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
+    sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
     _id,
     name,
     "slug": slug.current,
@@ -81,12 +81,8 @@ export const queries = {
     _createdAt,
     _updatedAt
   }`),
-  /**
-   * Get all games with active schedules
-   * Returns games sorted by name with their schedule configuration
-   */
   getScheduledGames: async () => {
-    const query = `*[_type == "gameOffering" && schedule.isActive == true] | order(name asc) {
+    const query = `*[_type == "gameOffering" && count(schedules[isActive == true]) > 0] | order(name asc) {
       _id,
       name,
       slug,
@@ -95,7 +91,8 @@ export const queries = {
       genre,
       esrbRating,
       description,
-      schedule {
+      schedules[] {
+        division,
         isActive,
         timingMode,
         mountainTime,
@@ -109,27 +106,57 @@ export const queries = {
   },
 
   /**
-   * Get games scheduled for a specific day
+   * Get games scheduled for a specific day (across all divisions)
    * @param {string} day - Day of week (lowercase: monday, tuesday, etc.)
    */
   getGamesByDay: async (day) => {
-    const query = `*[_type == "gameOffering" && schedule.isActive == true && $day in schedule.daysOfWeek] | order(schedule.mountainTime asc) {
+    const query = `*[_type == "gameOffering" && count(schedules[isActive == true && $day in daysOfWeek]) > 0] | order(name asc) {
       _id,
       name,
       slug,
       logo,
       externalLogoUrl,
       genre,
-      schedule
+      schedules[isActive == true && $day in daysOfWeek] {
+        division,
+        isActive,
+        timingMode,
+        mountainTime,
+        pacificTime,
+        daysOfWeek,
+        notes
+      }
     }`;
     
     return await sanityClient.fetch(query, { day });
   },
 
   /**
-   * Get a single game's schedule details
-   * @param {string} slug - Game slug
+   * Get games for a specific division
+   * @param {string} division - Division name (e.g., "High School", "Middle School")
    */
+  getGamesByDivision: async (division) => {
+    const query = `*[_type == "gameOffering" && count(schedules[isActive == true && division == $division]) > 0] | order(name asc) {
+      _id,
+      name,
+      slug,
+      logo,
+      externalLogoUrl,
+      genre,
+      schedules[isActive == true && division == $division] {
+        division,
+        isActive,
+        timingMode,
+        mountainTime,
+        pacificTime,
+        daysOfWeek,
+        notes
+      }
+    }`;
+    
+    return await sanityClient.fetch(query, { division });
+  },
+
   getGameSchedule: async (slug) => {
     const query = `*[_type == "gameOffering" && slug.current == $slug][0] {
       _id,
@@ -139,10 +166,27 @@ export const queries = {
       externalLogoUrl,
       genre,
       description,
-      schedule
+      schedules[] {
+        division,
+        isActive,
+        timingMode,
+        mountainTime,
+        pacificTime,
+        daysOfWeek,
+        notes
+      }
     }`;
     
     return await sanityClient.fetch(query, { slug });
+  },
+
+  /**
+   * Get all active divisions
+   * Returns unique list of division names that have active schedules
+   */
+  getActiveDivisions: async () => {
+    const query = `array::unique(*[_type == "gameOffering"].schedules[isActive == true].division)`;
+    return await sanityClient.fetch(query);
   },
 
 
