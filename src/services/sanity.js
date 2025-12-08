@@ -80,7 +80,70 @@ export const queries = {
     rulesAnchor,
     _createdAt,
     _updatedAt
-  }`)
+  }`),
+  /**
+   * Get all games with active schedules
+   * Returns games sorted by name with their schedule configuration
+   */
+  getScheduledGames: async () => {
+    const query = `*[_type == "gameOffering" && schedule.isActive == true] | order(name asc) {
+      _id,
+      name,
+      slug,
+      logo,
+      externalLogoUrl,
+      genre,
+      esrbRating,
+      description,
+      schedule {
+        isActive,
+        timingMode,
+        mountainTime,
+        pacificTime,
+        daysOfWeek,
+        notes
+      }
+    }`;
+    
+    return await client.fetch(query);
+  },
+
+  /**
+   * Get games scheduled for a specific day
+   * @param {string} day - Day of week (lowercase: monday, tuesday, etc.)
+   */
+  getGamesByDay: async (day) => {
+    const query = `*[_type == "gameOffering" && schedule.isActive == true && $day in schedule.daysOfWeek] | order(schedule.mountainTime asc) {
+      _id,
+      name,
+      slug,
+      logo,
+      externalLogoUrl,
+      genre,
+      schedule
+    }`;
+    
+    return await client.fetch(query, { day });
+  },
+
+  /**
+   * Get a single game's schedule details
+   * @param {string} slug - Game slug
+   */
+  getGameSchedule: async (slug) => {
+    const query = `*[_type == "gameOffering" && slug.current == $slug][0] {
+      _id,
+      name,
+      slug,
+      logo,
+      externalLogoUrl,
+      genre,
+      description,
+      schedule
+    }`;
+    
+    return await client.fetch(query, { slug });
+  },
 
 
 };
