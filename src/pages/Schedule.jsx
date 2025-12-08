@@ -231,11 +231,11 @@ export const Schedule = () => {
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="font-semibold text-purple-400">Mountain Timezone:</span>
-                <span className="text-gray-300 ml-2">Teams in Mountain Time</span>
+                <span className="text-gray-300 ml-2">Teams in Mountain League</span>
               </div>
               <div>
                 <span className="font-semibold text-pink-400">Pacific Timezone:</span>
-                <span className="text-gray-300 ml-2">Teams in Pacific Time</span>
+                <span className="text-gray-300 ml-2">Teams in Pacific League</span>
               </div>
             </div>
             <p className="text-gray-400 mt-2 text-sm">
