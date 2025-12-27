@@ -21,7 +21,7 @@ const MarkdownRenderer = ({ content }) => {
     
     // Bold and italic
     text = text.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-    text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="text-cyan-300">$1</strong>');
+    text = text.replace(/\*\*(.+?)\*\*\*/g, '<strong class="text-cyan-300">$1</strong>');
     text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
     
     // Links
@@ -55,8 +55,8 @@ const RuleCard = ({ rule, isOpen, onToggle }) => {
       >
         <div className="flex-1">
           <h3 className="text-xl font-bold text-white mb-1">{rule.category}</h3>
-          {rule.game && (
-            <span className="text-sm text-purple-400">{rule.game}</span>
+          {rule.gameName && (
+            <span className="text-sm text-purple-400">{rule.gameName}</span>
           )}
         </div>
         <div className="flex items-center space-x-4">
@@ -137,8 +137,8 @@ export const Rules = () => {
     setOpenRules(new Set());
   };
 
-  // Get unique games for filter
-  const games = ['all', ...new Set(rules.map(r => r.game).filter(Boolean))].sort();
+  // Get unique games for filter - now using gameName instead of game
+  const games = ['all', ...new Set(rules.map(r => r.gameName).filter(Boolean))].sort();
 
   // Filter rules by search and game
   const filteredRules = rules.filter(rule => {
@@ -146,14 +146,14 @@ export const Rules = () => {
       rule.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
       rule.content.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesGame = selectedGame === 'all' || rule.game === selectedGame;
+    const matchesGame = selectedGame === 'all' || rule.gameName === selectedGame;
     
     return matchesSearch && matchesGame;
   });
 
-  // Group rules by game
+  // Group rules by game - now using gameName
   const rulesByGame = filteredRules.reduce((acc, rule) => {
-    const game = rule.game || 'General Rules';
+    const game = rule.gameName || 'General Rules';
     if (!acc[game]) acc[game] = [];
     acc[game].push(rule);
     return acc;
