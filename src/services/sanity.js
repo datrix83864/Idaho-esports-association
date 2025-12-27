@@ -30,19 +30,19 @@ export const queries = {
   },
 
   // Get all rules
-getRules: async () => {
-  return client.fetch(`
-    *[_type == "rule"] | order(game->name asc, order asc) {
-      _id,
-      category,
-      content,
-      order,
-      lastUpdated,
-      "gameName": game->name,
-      "gameSlug": game->slug.current
-    }
-  `);
-},
+  getRules: async () => {
+    return sanityClient.fetch(`
+      *[_type == "rule"] | order(game->name asc, order asc) {
+        _id,
+        category,
+        content,
+        order,
+        lastUpdated,
+        "gameName": game->name,
+        "gameSlug": game->slug.current
+      }
+    `);
+  },
 
   // Get Expecting series articles
   getExpectingArticles: () =>
