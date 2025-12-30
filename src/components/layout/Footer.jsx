@@ -128,6 +128,43 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className="mt-8 pt-8 border-t border-purple-500/30">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Left side - Badge */}
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://app.candid.org/profile/15079270/idaho-esports-association-93-2128403/?pkId=dbdcfbf4-f040-410f-814a-f3ec72eaa509"
+                target="_blank"
+              >
+                <img src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/15079270/svg" />{" "}
+              </a>
+              <div className="text-left">
+                <p className="text-sm text-gray-400">Verified Non-Profit</p>
+                <p className="text-xs text-gray-500">
+                  GuideStar/Candid Certified
+                </p>
+              </div>
+            </div>
+
+            {/* Right side - 501(c)(3) info */}
+            <div className="text-center md:text-right text-gray-400 text-sm">
+              <p className="font-semibold">501(c)(3) Non-Profit Organization</p>
+              <p className="text-xs text-gray-500 mt-1">
+                Tax ID: [Your EIN] • Donations are tax-deductible
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 text-center text-gray-400">
+          <p>
+            &copy; {new Date().getFullYear()} Idaho Esports Association.
+            Non-Profit Organization.
+          </p>
+          <p className="mt-2 text-sm">
+            Committed to transparency and fair play in Idaho gaming.
+          </p>
+        </div>
 
         <div className="mt-8 pt-8 border-t border-purple-500/30 text-center text-gray-400">
           <p>
