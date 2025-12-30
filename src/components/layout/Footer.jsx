@@ -150,7 +150,7 @@ export const Footer = () => {
             <div className="text-center md:text-right text-gray-400 text-sm">
               <p className="font-semibold">501(c)(3) Non-Profit Organization</p>
               <p className="text-xs text-gray-500 mt-1">
-                Tax ID: [Your EIN] • Donations are tax-deductible
+                Tax ID: 93-2128403 • Donations are tax-deductible
               </p>
             </div>
           </div>
