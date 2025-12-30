@@ -165,16 +165,6 @@ export const Footer = () => {
             Committed to transparency and fair play in Idaho gaming.
           </p>
         </div>
-
-        <div className="mt-8 pt-8 border-t border-purple-500/30 text-center text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} Idaho Esports Association.
-            Non-Profit Organization.
-          </p>
-          <p className="mt-2 text-sm">
-            Committed to transparency and fair play in Idaho gaming.
-          </p>
-        </div>
       </div>
     </footer>
   );
