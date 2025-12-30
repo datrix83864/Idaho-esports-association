@@ -19,7 +19,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-white font-bold mb-4">Quick Links</h3>
+            <h3 className="text-white font-bold mb-4">Organization</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="/about" className="hover:text-purple-400">
@@ -27,13 +27,13 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/schools" className="hover:text-purple-400">
-                  Schools
+                <a href="/transparency" className="hover:text-purple-400">
+                  Transparency & Governance
                 </a>
               </li>
               <li>
-                <a href="/rules" className="hover:text-purple-400">
-                  Rules
+                <a href="/schools" className="hover:text-purple-400">
+                  Schools
                 </a>
               </li>
               <li>
@@ -50,6 +50,11 @@ export const Footer = () => {
               <li>
                 <a href="/expecting" className="hover:text-purple-400">
                   Getting Started Guide
+                </a>
+              </li>
+              <li>
+                <a href="/rules" className="hover:text-purple-400">
+                  Tournament Rules
                 </a>
               </li>
               {settings?.tournamentPlatformUrl && (

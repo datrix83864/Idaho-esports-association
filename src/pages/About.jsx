@@ -188,7 +188,7 @@ export const About = () => {
         <p className="text-gray-300 mb-4">
           Idaho Esports Association is a 501(c)(3) non-profit organization. This means:
         </p>
-        <ul className="space-y-2 text-gray-300">
+        <ul className="space-y-2 text-gray-300 mb-6">
           <li className="flex items-start space-x-3">
             <span className="text-purple-400 mt-1">✓</span>
             <span>All revenue goes directly toward supporting Idaho esports programs</span>
@@ -206,6 +206,12 @@ export const About = () => {
             <span>Our focus is on impact and community benefit, not profit</span>
           </li>
         </ul>
+        <a
+          href="/transparency"
+          className="inline-block px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold transition-all"
+        >
+          View Our Transparency & Governance
+        </a>
       </div>
 
       {/* Get Involved CTA */}

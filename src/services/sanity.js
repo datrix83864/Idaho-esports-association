@@ -110,7 +110,7 @@ export const queries = {
         notes
       }
     }`;
-    
+
     return await sanityClient.fetch(query);
   },
 
@@ -136,7 +136,7 @@ export const queries = {
         notes
       }
     }`;
-    
+
     return await sanityClient.fetch(query, { day });
   },
 
@@ -162,7 +162,7 @@ export const queries = {
         notes
       }
     }`;
-    
+
     return await sanityClient.fetch(query, { division });
   },
 
@@ -185,7 +185,7 @@ export const queries = {
         notes
       }
     }`;
-    
+
     return await sanityClient.fetch(query, { slug });
   },
 
@@ -197,6 +197,37 @@ export const queries = {
     const query = `array::unique(*[_type == "gameOffering"].schedules[isActive == true].division)`;
     return await sanityClient.fetch(query);
   },
+  // Non-Profit Transparency queries
+  getBoardMembers: () =>
+    sanityClient.fetch(`*[_type == "boardMember" && active == true] | order(order asc) {
+      _id, name, position, photo, bio, email, linkedIn, termStart, termEnd
+    }`),
 
+  getMeetingAgendas: (status = null) => {
+    const statusFilter = status ? `&& status == "${status}"` : '';
+    return sanityClient.fetch(`*[_type == "meetingAgenda" ${statusFilter}] | order(meetingDate desc) {
+      _id, title, meetingDate, location, meetingType, status, agenda, 
+      "agendaPDF": agendaPDF.asset->url, 
+      "minutesPDF": minutesPDF.asset->url,
+      publicAccess, publicJoinInfo
+    }`);
+  },
+
+  getFinancialReports: () =>
+    sanityClient.fetch(`*[_type == "financialReport" && published == true] | order(fiscalYear desc, reportDate desc) {
+      _id, title, reportType, fiscalYear, fiscalPeriod, reportDate, summary,
+      "reportPDF": reportPDF.asset->url,
+      totalRevenue, totalExpenses, highlights
+    }`),
+
+  getNonprofitInfo: () =>
+    sanityClient.fetch(`*[_type == "nonprofitInfo"][0] {
+      legalName, ein, registeredAddress, incorporationDate, incorporationState,
+      taxExemptStatus, taxExemptDate, missionStatement,
+      "bylawsPDF": bylawsPDF.asset->url,
+      "articlesOfIncorporation": articlesOfIncorporation.asset->url,
+      "conflictOfInterestPolicy": conflictOfInterestPolicy.asset->url,
+      annualReportURL, guidestarURL
+    }`),
 
 };
