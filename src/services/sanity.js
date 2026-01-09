@@ -59,8 +59,18 @@ export const queries = {
   // Get site settings
   getSiteSettings: () =>
     sanityClient.fetch(`*[_type == "siteSettings"][0] {
-      tournamentPlatformUrl, merchStoreUrl, discordInvite, donationUrl, mailingListDescription
-    }`),
+    tournamentPlatformUrl, 
+    merchStoreUrl, 
+    discordInvite, 
+    donationUrl, 
+    mailingListDescription,
+    announcementBanner {
+      enabled,
+      message,
+      link,
+      variant
+    }
+  }`),
   getGames: () =>
     sanityClient.fetch(`*[_type == "gameOffering"] | order(name asc){
     _id,
