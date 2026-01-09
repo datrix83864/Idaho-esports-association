@@ -14,6 +14,8 @@ import { Support } from "./pages/Support";
 import { Contact } from "./pages/Contact";
 import { Games } from "./pages/Games";
 import { AnnouncementBanner } from "./components/common/AnnouncementBanner";
+import { Schedule } from "./pages/Schedule";
+import { Transparency } from "./pages/Transparency";
 
 function App() {
   return (
@@ -30,8 +32,10 @@ function App() {
             <Route path="/games" element={<Games />} />
             <Route path="/schools" element={<Schools />} />
             <Route path="/rules" element={<Rules />} />
+            <Route path="/transparency" element={<Transparency />} />
             <Route path="/sponsors" element={<Sponsors />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/schedule" element={<Schedule />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

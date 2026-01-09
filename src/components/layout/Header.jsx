@@ -12,8 +12,10 @@ export const Header = () => {
     { name: 'Games', path: '/games' },
     { name: 'Schools', path: '/schools' },
     { name: 'Rules', path: '/rules' },
+    { name: 'Schedule', path: '/schedule' },
     { name: 'Getting Started', path: '/expecting' },
     { name: 'Sponsors', path: '/sponsors' },
+    { name: 'Transparency', path: '/transparency' },
     { name: 'Support Us', path: '/support' },
     { name: 'Contact', path: '/contact' },
   ];
